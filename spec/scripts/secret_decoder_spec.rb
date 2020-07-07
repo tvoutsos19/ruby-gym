@@ -1,5 +1,12 @@
 describe "secret_decoder.rb" do
-  it "should output 'Our decoded message'", points: 1 do
+  it "prints 'Our decoded message'", points: 1 do
+    allow_any_instance_of(Object).to receive(:gets).and_return("3 n22d t4 b2 m4r2 s2cr2t\n")
+    expect { require_relative '../../secret_decoder.rb' }.to output(/I need to be more secret/).to_stdout
+  end
+end
+
+describe "secret_decoder.rb" do
+  it "prints 'Our decoded message'", points: 1 do
 
   # Un-require secret_decoder.rb
     secret_decoder = $".select{|r| r.include? 'secret_decoder.rb'}
@@ -9,3 +16,4 @@ describe "secret_decoder.rb" do
     expect { require_relative '../../secret_decoder.rb' }.to output(/Don't tell anyone our code/).to_stdout
   end
 end
+
