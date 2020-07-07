@@ -16,16 +16,3 @@
 #   5. The year is not a leap year (it has 365 days).
 
 p "Enter a year:"
-
-year = gets.chomp.to_i
-four = year % 4
-hundred = year % 100
-four_hundred = year % 400
-
-if four.zero? && hundred != 0
-  p year.to_s + " is a leap year!"
-elsif four_hundred.zero?
-  p year.to_s + " is a leap year!"
-else
-  p year.to_s + " is not a leap year."
-end

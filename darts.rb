@@ -27,21 +27,3 @@
 #         (-10, 0)
         
 p "Enter X,Y coordinates in the format 'X,Y'"
-
-coordinates = gets.chomp.split(",")
-
-x = coordinates.first.to_f
-y = coordinates.last.to_f
-
-circle = x ** 2 + y ** 2
-
-if circle > 25 && circle <= 100
-  p "1 points"
-elsif circle > 1 && circle <= 25
-  p "5 points"
-elsif circle <= 1
-  p "10 points"
-else
-  p "0 points"
-end
-

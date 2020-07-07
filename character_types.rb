@@ -14,12 +14,3 @@
 #  "Number of digits in the string is: 4"
 
 p "Enter a sentence:"
-string = gets.chomp
-
-letters = string.gsub(/[^a-z]/i, "")
-spaces = string.length - string.gsub(/\s+/, "").length
-digits = string.gsub(/[^0-9]/, "")
-
-p "Number of letters in the string is: #{letters.length}"
-p "Number of spaces in the string is: #{spaces}"
-p "Number of digits in the string is: #{digits.length}"

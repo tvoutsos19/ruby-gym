@@ -6,13 +6,3 @@
 # Hint: use the rand method for the dice roll.
 
 p "Enter a guess:"
-
-guess = gets.chomp.to_i
-
-roll = rand(0..6)
-
-if roll == guess
-  p "Congratulations! You guessed correctly!"
-else
-  p "Shame on you. The die landed on #{roll}"
-end

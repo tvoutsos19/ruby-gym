@@ -4,7 +4,3 @@
 #   prints, 'the' appeared x times
 
 p "Enter a sentence:"
-
-sentence = gets.chomp.gsub(/[^a-z0-9\s]/i, "")
-
-p "'the' appeared " + sentence.split.count("the").to_s + " times"
