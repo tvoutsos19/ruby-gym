@@ -191,7 +191,7 @@ describe "darts.rb" do
 end
 
 describe "dice_roll.rb" do
-  it "prints 'Congratulations' when the user enters a correct guess", points: 1 do
+  it "prints 'You guessed correctly' when the user enters a correct guess", points: 1 do
     # Un-require dice_roll.rb
     dice_roll = $".select{|r| r.include? 'dice_roll.rb'}
     $".delete(dice_roll.first)
