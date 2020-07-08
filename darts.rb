@@ -30,4 +30,8 @@
 #           -
 #         (-10, 0)
         
+
+# Hint: the formula to find a circle with the center point (j, k) and radius (r):
+#     (x-j)^2 + (y-k)^2 = r^2
+
 p "Enter X,Y coordinates in the format 'X,Y'"
