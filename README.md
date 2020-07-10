@@ -99,3 +99,208 @@ Your program should print: `x points`
 
 Hint: the formula to find a circle with the center point (j, k) and radius (r):
    (x-j)^2 + (y-k)^2 = r^2
+
+
+### think_fast.rb
+
+We have to expect the unexpected — if users can find a way to break our code by navigating through it in a sequence that we didn't predict, they 100% will.
+
+Suppose that your program has to deal with the object inside the variable some_random_input, starting on Line 18. If the object is:
+
+a String: downcase it and print
+a Time: figure out the day of the week, downcased, and print
+an Integer: figure out whether it's odd or even and print
+a Symbol: downcase it and print
+nil: print "no object provided"
+true: print "you may pass"
+false: print "you may not pass"
+a Hash: print the list of keys within the Hash, as an Array.
+
+
+How would you start to go about it?
+
+---
+
+Remember that, as developers, we're inventors — exploring the unknown and solving new problems that come our way. The aren't formulas to look up and follow for every situation; just tools in our belts. One of our most important tools for dealing with the unknown is conditionals.
+
+https://chapters.firstdraft.com/chapters/763
+
+---
+
+Next, remember that there's a method called .class that we can call on any Ruby object to find out what kind of thing it is. We first met it way back in the Integer Chapter, and we used it a lot especially when exploring an API response, which could come back to us in different shapes and sizes.
+
+---
+
+There are no automated tests for this REPL, it's mostly a thought exercise. But try to flesh out your answer and think of questions to for us to discuss.
+
+### accumulate.rb
+
+Add some code to this program to, at the end, print the history of answers given while being pestered whether we're there yet.
+
+For example,
+```bash
+"Are we there yet?"
+ No
+"Are we there yet?"
+ No
+"Are we there yet?"
+ ... no
+"Are we there yet?"
+ NO
+"Are we there yet?"
+ @#*(&$*(@&%#
+"Are we there yet?"
+ yes
+["no", "... no", "no", "@#*(&$*(@&%#", "yes"]
+```
+
+Key output
+
+Note that at the end of the dialogue, it printed an Array with:
+```bash
+["no", "... no", "no", "@#*(&$*(@&%#", "yes"]
+```
+
+### 1_two_fer.rb
+
+Two-fer or 2-fer is short for two for one. One for you and one for me.
+
+"One for X, one for me."
+When X is a name or "you".
+
+If the given name is "alice", the result should be "One for Alice, one for me." 
+
+If no name is given, the result should be "One for you, one for me."
+
+
+### 2_phrase.rb
+ 
+Most commonly, we define classes to represent things; those things have attributes; and we define instance methods to operate on those attributes and return useful values.
+
+Phrase
+Convert a phrase to its acronym.
+
+Techies love their TLA (Three Letter Acronyms)!
+
+Help generate some jargon by writing a program that converts a long name like Portable Network Graphics to its acronym (PNG).
+ 
+Your Job
+Define a class called `Phrase` with:
+
+An attribute accessor called `body` which will store a String.
+An instance method called `abbreviate` that will return a String: the uppercase first letter of each word in the phrase.
+
+Examples
+```ruby
+a = Phrase.new
+a.body = "Portable Network Graphics"
+a.abbreviate # => "PNG"
+
+b = Phrase.new
+b.body = "Complementary metal-oxide semiconductor"
+b.abbreviate # => "CMOS"
+```
+
+Try to figure out a solution using methods introduced in the Ruby readings — writing software is about inventing solutions to new problems using the tools at hand.
+
+Put on your inventor's cap and try to figure out how to assemble solutions to these puzzles using the methods you've met in the Ruby readings so far. There's at least one way, and usually multiple.
+
+But you should most definitely ask us questions about the methods and classes in the Ruby readings, and how they work.
+
+### 3_hamming.rb
+
+Calculate the Hamming difference between two DNA strands.
+
+A mutation is simply a mistake that occurs during the creation or copying of a nucleic acid, in particular DNA. Because nucleic acids are vital to cellular functions, mutations tend to cause a ripple effect throughout the cell. Although mutations are technically mistakes, a very rare mutation may equip the cell with a beneficial attribute. In fact, the macro effects of evolution are attributable by the accumulated result of beneficial microscopic mutations over many generations.
+
+The simplest and most common type of nucleic acid mutation is a point mutation, which replaces one base with another at a single nucleotide.
+
+By counting the number of differences between two homologous DNA strands taken from different genomes with a common ancestor, we get a measure of the minimum number of point mutations that could have occurred on the evolutionary path between the two strands.
+
+This is called the 'Hamming distance'.
+
+It is found by comparing two DNA strands and counting how many of the nucleotides are different from their equivalent in the other string.
+
+GAGCCTACTAACGGGAT
+CATCGTAATGACGGCCT
+^ ^ ^  ^ ^    ^^
+
+The Hamming distance between these two DNA strands is 7.
+
+Your Job
+Define a class called `Dna` with an attribute accessor called `strand` and an instance method called `distance_between` that accepts a different instance of the `Dna` class, and returns an Integer.
+
+Example
+
+```ruby
+dna = Dna.new
+dna.strand = "G"
+other_dna = Dna.new
+other_dna.strand = "T"
+
+p dna.distance_between(other_dna) # => 1
+```
+### 4_raindrops.rb
+
+Convert a number to a string, the contents of which depend on the number's factors.
+
+If the number has 3 as a factor, output 'Pling'.
+If the number has 5 as a factor, output 'Plang'.
+If the number has 7 as a factor, output 'Plong'.
+If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
+
+Examples
+28's factors are 1, 2, 4, 7, 14, 28.
+In raindrop-speak, this would be a simple "Plong".
+30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
+In raindrop-speak, this would be a "PlingPlang".
+34 has four factors: 1, 2, 17, and 34.
+In raindrop-speak, this would be "34".
+
+Your Job
+Write a program that asks the user for an Integer and prints a String based on the rules above.
+
+Examples
+When the input is 1
+```ruby
+"Enter an integer"
+1
+"1"
+```
+When the input is 5
+```ruby
+"Enter an integer"
+5
+"Plang"
+```
+When the input is 21
+```ruby
+"Enter an integer"
+5
+"PlingPlang"
+```
+
+### 5_isogram.rb
+
+Determine if a word or phrase is an isogram.
+
+An isogram (also known as a "nonpattern word") is a word or phrase without a repeating letter, however spaces and hyphens are allowed to appear multiple times.
+
+Examples of isograms:
+
+lumberjacks
+background
+downstream
+six-year-old
+
+The word isograms, however, is not an isogram, because the s repeats.
+
+Your Job
+Define a class called String with a class method called isogram? that accepts one String argument, and returns true or false.
+
+Example
+
+```ruby
+String.isogram?("eleven") # => false
+String.isogram?("subdermatoglyphic") # => true
+```

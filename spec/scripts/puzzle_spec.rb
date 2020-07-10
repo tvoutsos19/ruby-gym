@@ -215,3 +215,174 @@ describe "dice_roll.rb" do
     expect { require_relative '../../dice_roll' }.to output(/Shame on you\. The die landed on 5/i).to_stdout
   end
 end
+
+
+describe "accumulate.rb" do
+  it "prints 'Are we there yet?' 5 times when the user enters 'yes' after 4 other tries'", points: 1 do
+    # Un-require accumulate.rb
+    accumulate = $".select{|r| r.include? 'accumulate.rb'}
+    $".delete(accumulate.first)
+
+    allow_any_instance_of(Kernel).to receive(:gets) do
+      @counter ||= 0
+      response = if @counter > 3 # an arbitrary threshold
+                   "yes"
+                 else
+                   "no"
+                 end
+      @counter += 1
+      response
+    end
+
+    expect { require_relative '../../accumulate' }.to output(/(.?Are we there yet\?.?\n){5}/i).to_stdout
+  end
+end
+
+describe "accumulate.rb" do
+  it "prints an Array of the words the user entered, '\[\"no\", \"no\", \"no\", \"no\", \"yes\"\]'", points: 1 do
+    # Un-require accumulate.rb
+    accumulate = $".select{|r| r.include? 'accumulate.rb'}
+    $".delete(accumulate.first)
+
+    allow_any_instance_of(Kernel).to receive(:gets) do
+      @counter ||= 0
+      response = if @counter > 3 # an arbitrary threshold
+                   "yes"
+                 else
+                   "no"
+                 end
+      @counter += 1
+      response
+    end
+
+    expect { require_relative '../../accumulate' }.to output(/\["no", "no", "no", "no", "yes"\]/).to_stdout
+  end
+end
+
+
+describe "accumulate.rb" do
+  it "prints an Array of the words the user entered, '\[\"no\", \"no\", \"123\", \"yeah\", \"yes\"\]'", points: 1 do
+    # Un-require accumulate.rb
+    accumulate = $".select{|r| r.include? 'accumulate.rb'}
+    $".delete(accumulate.first)
+
+    allow_any_instance_of(Kernel).to receive(:gets) do
+      @counter ||= 0
+      response = if @counter > 3 # an arbitrary threshold
+                   "yes"
+                elsif @counter == 0
+                  "no"
+                elsif @counter == 1
+                  "NO"
+                elsif @counter == 2
+                  "123"
+                elsif @counter == 3
+                  "YEAH"
+                 end
+      @counter += 1
+      response
+    end
+
+    expect { require_relative '../../accumulate' }.to output(/\["no", "no", "123", "yeah", "yes"\]/).to_stdout
+  end
+end
+
+
+describe "think_fast.rb" do
+  it "prints '5 is odd' when when the random number is '5'", points: 1 do
+    # Un-require think_fast.rb
+    think_fast = $".select{|r| r.include? 'think_fast.rb'}
+    $".delete(think_fast.first)
+
+    allow_any_instance_of(Kernel).to receive(:rand).and_return(5)
+    allow_any_instance_of(Array).to receive(:sample).and_return(5)
+
+    expect { require_relative '../../think_fast' }.to output(/5 is odd/i).to_stdout
+  end
+end
+
+describe "think_fast.rb" do
+  it "prints '40 is even' when the random number is '40'", points: 1 do
+    # Un-require think_fast.rb
+    think_fast = $".select{|r| r.include? 'think_fast.rb'}
+    $".delete(think_fast.first)
+
+    allow_any_instance_of(Kernel).to receive(:rand).and_return(40)
+    allow_any_instance_of(Array).to receive(:sample).and_return(40)
+
+    expect { require_relative '../../think_fast' }.to output(/40 is even/i).to_stdout
+  end
+end
+
+describe "think_fast.rb" do
+  it "prints 'you may pass' when `some_random_input` is 'true'", points: 1 do
+    # Un-require think_fast.rb
+    think_fast = $".select{|r| r.include? 'think_fast.rb'}
+    $".delete(think_fast.first)
+
+    allow_any_instance_of(Array).to receive(:sample).and_return(true)
+
+    expect { require_relative '../../think_fast' }.to output(/you may pass/i).to_stdout
+  end
+end
+
+describe "think_fast.rb" do
+  it "prints 'you may not pass' when `some_random_input` is 'false'", points: 1 do
+    # Un-require think_fast.rb
+    think_fast = $".select{|r| r.include? 'think_fast.rb'}
+    $".delete(think_fast.first)
+
+    allow_any_instance_of(Array).to receive(:sample).and_return(false)
+
+    expect { require_relative '../../think_fast' }.to output(/you may not pass/i).to_stdout
+  end
+end
+
+describe "think_fast.rb" do
+  it "prints '[:city, :state, :zip]' when `some_random_input` is a Hash", points: 1 do
+    # Un-require think_fast.rb
+    think_fast = $".select{|r| r.include? 'think_fast.rb'}
+    $".delete(think_fast.first)
+
+    allow_any_instance_of(Array).to receive(:sample).and_return({ :city => "Chicago", :state => "IL", :zip => 60654 })
+
+    expect { require_relative '../../think_fast' }.to output(/\[:city, :state, :zip\]/i).to_stdout
+  end
+end
+
+describe "think_fast.rb" do
+  it "prints 'hello!' when `some_random_input` is a 'Hello!", points: 1 do
+    # Un-require think_fast.rb
+    think_fast = $".select{|r| r.include? 'think_fast.rb'}
+    $".delete(think_fast.first)
+
+    allow_any_instance_of(Array).to receive(:sample).and_return("Hello!")
+
+    expect { require_relative '../../think_fast' }.to output(/hello!/).to_stdout
+  end
+end
+
+describe "think_fast.rb" do
+  it "prints ':goodbye' when `some_random_input` is a ':GOODBYE", points: 1 do
+    # Un-require think_fast.rb
+    think_fast = $".select{|r| r.include? 'think_fast.rb'}
+    $".delete(think_fast.first)
+
+    allow_any_instance_of(Array).to receive(:sample).and_return(:GOODBYE)
+
+    expect { require_relative '../../think_fast' }.to output(/:goodbye/).to_stdout
+  end
+end
+
+describe "think_fast.rb" do
+  it "prints 'monday' when `some_random_input` is a Time and the current day is a Monday", points: 1 do
+    # Un-require think_fast.rb
+    think_fast = $".select{|r| r.include? 'think_fast.rb'}
+    $".delete(think_fast.first)
+
+    # allow(Time).to receive(:now).and_return(Time.at(1594669445))
+    allow_any_instance_of(Array).to receive(:sample).and_return(Time.at(1594669445))
+    
+    expect { require_relative '../../think_fast' }.to output(/monday/).to_stdout
+  end
+end
