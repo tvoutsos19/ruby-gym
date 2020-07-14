@@ -1,6 +1,7 @@
-# Add some code to this program to, at the end,
-#  print the history of answers given while being pestered
-#  whether we're there yet.
+# Add some code to this program so that it:
+#  prints the history of answers given while being pestered whether we're there yet.
+
+# Note: all the recorded answers should be lowercase
 
 p "Are we there yet?"
 

@@ -24,8 +24,4 @@
 #   b.abbreviate # => "CMOS"
 
 
-# Try to figure out a solution using methods introduced in the Ruby readings — writing software is about inventing solutions to new problems using the tools at hand.
 
-# Put on your inventor's cap and try to figure out how to assemble solutions to these puzzles using the methods you've met in the Ruby readings so far. There's at least one way, and usually multiple.
-
-# But you should most definitely ask us questions about the methods and classes in the Ruby readings, and how they work.

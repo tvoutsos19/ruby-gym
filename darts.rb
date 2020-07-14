@@ -19,17 +19,11 @@
 #  (defined by its real Cartesian coordinates x and y),
 #  prints the correct amount earned by a dart landing in that point.
 
-# The outer circle of the target looks a little like:
-#        (10, 0)
-#           - 
-#       -       -
-#    -             -
-# (-10, 0)         (10, 0)
-#    -             -
-#       -       -
-#           -
-#         (-10, 0)
-        
+# Example
+
+#  "Enter X,Y coordinates in the format 'X,Y'"
+#  10,10
+#  0 points
 
 # Hint: the formula to find a circle with the center point (j, k) and radius (r):
 #     (x-j)^2 + (y-k)^2 = r^2

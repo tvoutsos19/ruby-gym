@@ -4,8 +4,6 @@
 #   If the given year is a leap year print, "2016 is a leap year!"
 #   Otherwise print, "2015 is not a leap year."
 
-
-
 # Hint:
 #   To determine whether a year is a leap year, follow these steps:
 

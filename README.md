@@ -1,4 +1,4 @@
-# Ruby Practice
+# Ruby Gym
 
 Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
 
@@ -18,15 +18,23 @@ Your program should print: `'the' appeared x times`
 
 ### secret_encoder
 
-Create an encoder that will allow you to enter a string and replace the vowels. 
-Here is our secret code, don't tell anyone... a = 1, e = 2, i = 3, o = 4, u = 5.  
+Write a program that
+  asks the user for a secret message
+  and 'encode's the message by replacing vowels with other characters
+  Here is our secret code, don't tell anyone... a = 1, e = 2, i = 3, o = 4, u = 5
+
 Your program should print the encoded message.
 
 ### secret_decorder
 
-We have a way to encode our messages, now can you write a way to decode them? 
+We have a program to encode our messages, now can you write a way to decode them? 
 Remember our sercret code: a = 1, e = 2, i = 3, o = 4, u = 5.  
-Your program should print the decoded message. (Make sure to capitalize the first word)
+Your program should:
+- ask for an encoded message
+- decode the message
+- print the decoded message.
+
+(Make sure to capitalize the first word in the decoded message)
 
 
 ### two_fer.rb
@@ -43,11 +51,11 @@ If no name is given, the result should be "One for you, one for me."
 ### character_types
 
 Write a program that:  
-  Asks the user to enter a sentence.  
-  Counts the total number of letters in the given sentence.  
-  Counts the total number of spaces in the given sentence.  
-  Counts the total numbers of digits in the given sentence.  
-  Prints all the above information out.
+- Asks the user to enter a sentence.
+- Counts the total number of letters in the given sentence.
+- Counts the total number of spaces in the given sentence.
+- Counts the total numbers of digits in the given sentence.
+- Prints all the above information out.
 
 Example:
 ```bash
@@ -59,10 +67,10 @@ here 12 plus 25
 ```
 ### dice_roll
 
-You plan to roll a die.  
-Ask the user for a guess at what number the die will land on and then generate a random dice roll (a number between 1 and 6).  
-If the User guessed right, your program should print `You guessed correctly`  
-If they didn't, you program should print `Shame on you. The die landed on x`
+Write a program that:
+- Ask the user for a guess at what number the die will land on and then generate a random dice roll (a number between 1 and 6).  
+- If the User guessed right, your program should print `You guessed correctly`  
+- If they didn't, you program should print `Shame on you. The die landed on x`
 
 Hint: Use the `rand` method for the dice roll.
 
@@ -127,14 +135,14 @@ When the input is 21
 
 We have to expect the unexpected — if users can find a way to break our code by navigating through it in a sequence that we didn't predict, they 100% will.
 
-Suppose that your program has to deal with the object inside the variable some_random_input, starting on Line 18.
+Suppose that your program has to deal with the object inside the variable `some_random_input`
 
 If the object is:
 
-- a String: downcase it and print
-- a Time: figure out the day of the week, downcased, and print
+- a String: downcase it and print it
+- a Time: figure out the day of the week, downcased, and print it
 - an Integer: figure out whether it's odd or even and print, `"X is even"` or `"X is odd"`
-- a Symbol: downcase it and print
+- a Symbol: downcase it and print it
 - nil: print `"no object provided"`
 - true: print `"you may pass"`
 - false: print `"you may not pass"`
@@ -143,23 +151,16 @@ If the object is:
 
 How would you start to go about it?
 
----
-
-Remember that, as developers, we're inventors — exploring the unknown and solving new problems that come our way. The aren't formulas to look up and follow for every situation; just tools in our belts. One of our most important tools for dealing with the unknown is conditionals.
+Remember that, as developers, we're inventors — exploring the unknown and solving new problems that come our way. The aren't formulas to look up and follow for every situation; just tools in our belts. One of our most important tools for dealing with the unknown are `if` statements.
 
 https://chapters.firstdraft.com/chapters/763
 
----
+Next, remember that there's a method called `.class` that we can call on any Ruby object to find out what kind of thing it is. We first met it way back in the Integer Chapter, and we used it a lot especially when exploring an API response, which could come back to us in different shapes and sizes.
 
-Next, remember that there's a method called .class that we can call on any Ruby object to find out what kind of thing it is. We first met it way back in the Integer Chapter, and we used it a lot especially when exploring an API response, which could come back to us in different shapes and sizes.
-
----
-
-There are no automated tests for this REPL, it's mostly a thought exercise. But try to flesh out your answer and think of questions to for us to discuss.
 
 ### accumulate.rb
 
-Add some code to this program to, at the end, print the history of answers given while being pestered whether we're there yet.
+Add some code to this program so that is prints the history of answers given while being pestered whether we're there yet.
 
 For example,
 ```bash
@@ -184,6 +185,8 @@ Note that at the end of the dialogue, it printed an Array with:
 ```bash
 ["no", "... no", "no", "@#*(&$*(@&%#", "yes"]
 ```
+
+_all the recorded answers should be lowercase_
 
 ### isogram.rb
 
@@ -269,7 +272,12 @@ Write a program that asks for a point in the target
  (defined by its real Cartesian coordinates x and y),
  prints the correct amount earned by a dart landing in that point.
 
-Your program should print: `x points`
+Example
+```bash
+"Enter X,Y coordinates in the format 'X,Y'"
+10,10
+0 points
+```
 
 Hint: the formula to find a circle with the center point (j, k) and radius (r):
    (x-j)^2 + (y-k)^2 = r^2
@@ -302,9 +310,3 @@ b = Phrase.new
 b.body = "Complementary metal-oxide semiconductor"
 b.abbreviate # => "CMOS"
 ```
-
-Try to figure out a solution using methods introduced in the Ruby readings — writing software is about inventing solutions to new problems using the tools at hand.
-
-Put on your inventor's cap and try to figure out how to assemble solutions to these puzzles using the methods you've met in the Ruby readings so far. There's at least one way, and usually multiple.
-
-But you should most definitely ask us questions about the methods and classes in the Ruby readings, and how they work.
