@@ -105,16 +105,18 @@ Hint: the formula to find a circle with the center point (j, k) and radius (r):
 
 We have to expect the unexpected — if users can find a way to break our code by navigating through it in a sequence that we didn't predict, they 100% will.
 
-Suppose that your program has to deal with the object inside the variable some_random_input, starting on Line 18. If the object is:
+Suppose that your program has to deal with the object inside the variable some_random_input, starting on Line 18.
 
-a String: downcase it and print
-a Time: figure out the day of the week, downcased, and print
-an Integer: figure out whether it's odd or even and print
-a Symbol: downcase it and print
-nil: print "no object provided"
-true: print "you may pass"
-false: print "you may not pass"
-a Hash: print the list of keys within the Hash, as an Array.
+If the object is:
+
+- a String: downcase it and print
+- a Time: figure out the day of the week, downcased, and print
+- an Integer: figure out whether it's odd or even and print, `"X is even"` or `"X is odd"`
+- a Symbol: downcase it and print
+- nil: print `"no object provided"`
+- true: print `"you may pass"`
+- false: print `"you may not pass"`
+- a Hash: print the list of keys within the Hash, as an Array.
 
 
 How would you start to go about it?
@@ -165,12 +167,12 @@ Note that at the end of the dialogue, it printed an Array with:
 
 Two-fer or 2-fer is short for two for one. One for you and one for me.
 
-"One for X, one for me."
-When X is a name or "you".
+Write a program that asks the user for a name and prints:
+`"One for X, one for me."`
 
-If the given name is "alice", the result should be "One for Alice, one for me." 
+If the given name is "alice", the result should be `"One for Alice, one for me."` 
 
-If no name is given, the result should be "One for you, one for me."
+If no name is given, the result should be `"One for you, one for me."`
 
 
 ### 2_phrase.rb
@@ -296,7 +298,7 @@ six-year-old
 The word isograms, however, is not an isogram, because the s repeats.
 
 Your Job
-Define a class called String with a class method called isogram? that accepts one String argument, and returns true or false.
+Define a class called String with a class method called `isogram?` that accepts one String argument, and returns true or false.
 
 Example
 
