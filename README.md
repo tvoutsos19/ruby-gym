@@ -28,6 +28,18 @@ We have a way to encode our messages, now can you write a way to decode them?
 Remember our sercret code: a = 1, e = 2, i = 3, o = 4, u = 5.  
 Your program should print the decoded message. (Make sure to capitalize the first word)
 
+
+### two_fer.rb
+
+Two-fer or 2-fer is short for two for one. One for you and one for me.
+
+"One for X, one for me."
+When X is a name or "you".
+
+If the given name is "Alice", the result should be "One for Alice, one for me." 
+
+If no name is given, the result should be "One for you, one for me."
+
 ### character_types
 
 Write a program that:  
@@ -71,35 +83,45 @@ Hint:
   4. The year is a leap year (it has 366 days).
   5. The year is not a leap year (it has 365 days).
 
-### darts
+### raindrops.rb
 
-Write a program that prints the earned points of a single toss of a Darts game.
+Convert a number to a string, the contents of which depend on the number's factors.
 
-Darts is a game where players throw darts to a target.
+If the number has 3 as a factor, output 'Pling'.
+If the number has 5 as a factor, output 'Plang'.
+If the number has 7 as a factor, output 'Plong'.
+If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
 
-In our particular instance of the game, the target rewards with 4 different amounts of points,
- depending on where the dart lands.
+Examples
+28's factors are 1, 2, 4, 7, 14, 28.
+In raindrop-speak, this would be a simple "Plong".
+30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
+In raindrop-speak, this would be a "PlingPlang".
+34 has four factors: 1, 2, 17, and 34.
+In raindrop-speak, this would be "34".
 
-If the dart lands:  
-outside the target: 0 points.  
-in the outer circle of the target: 1 point.  
-in the middle circle of the target: 5 points.  
-in the inner circle of the target: 10 points.  
- 
- The outer circle has a radius of 10 units
-   (this is equivalent to the total radius for the entire target),
-   the middle circle a radius of 5 units, and the inner circle a radius of 1 unit.
-   They are all centered to the same point (that is, the circles are concentric) defined by the coordinates (0, 0).
+Your Job
+Write a program that asks the user for an Integer and prints a String based on the rules above.
 
-Write a program that asks for a point in the target
- (defined by its real Cartesian coordinates x and y),
- prints the correct amount earned by a dart landing in that point.
-
-Your program should print: `x points`
-
-Hint: the formula to find a circle with the center point (j, k) and radius (r):
-   (x-j)^2 + (y-k)^2 = r^2
-
+Examples
+When the input is 1
+```ruby
+"Enter an integer"
+1
+"1"
+```
+When the input is 5
+```ruby
+"Enter an integer"
+5
+"Plang"
+```
+When the input is 21
+```ruby
+"Enter an integer"
+5
+"PlingPlang"
+```
 
 ### think_fast.rb
 
@@ -163,53 +185,32 @@ Note that at the end of the dialogue, it printed an Array with:
 ["no", "... no", "no", "@#*(&$*(@&%#", "yes"]
 ```
 
-### 1_two_fer.rb
+### isogram.rb
 
-Two-fer or 2-fer is short for two for one. One for you and one for me.
+Determine if a word or phrase is an isogram.
 
-Write a program that asks the user for a name and prints:
-`"One for X, one for me."`
+An isogram (also known as a "nonpattern word") is a word or phrase without a repeating letter, however spaces and hyphens are allowed to appear multiple times.
 
-If the given name is "alice", the result should be `"One for Alice, one for me."` 
+Examples of isograms:
 
-If no name is given, the result should be `"One for you, one for me."`
+lumberjacks
+background
+downstream
+six-year-old
 
+The word isograms, however, is not an isogram, because the s repeats.
 
-### 2_phrase.rb
- 
-Most commonly, we define classes to represent things; those things have attributes; and we define instance methods to operate on those attributes and return useful values.
-
-Phrase
-Convert a phrase to its acronym.
-
-Techies love their TLA (Three Letter Acronyms)!
-
-Help generate some jargon by writing a program that converts a long name like Portable Network Graphics to its acronym (PNG).
- 
 Your Job
-Define a class called `Phrase` with:
+Define a class called String with a class method called isogram? that accepts one String argument, and returns true or false.
 
-An attribute accessor called `body` which will store a String.
-An instance method called `abbreviate` that will return a String: the uppercase first letter of each word in the phrase.
+Example
 
-Examples
 ```ruby
-a = Phrase.new
-a.body = "Portable Network Graphics"
-a.abbreviate # => "PNG"
-
-b = Phrase.new
-b.body = "Complementary metal-oxide semiconductor"
-b.abbreviate # => "CMOS"
+String.isogram?("eleven") # => false
+String.isogram?("subdermatoglyphic") # => true
 ```
 
-Try to figure out a solution using methods introduced in the Ruby readings — writing software is about inventing solutions to new problems using the tools at hand.
-
-Put on your inventor's cap and try to figure out how to assemble solutions to these puzzles using the methods you've met in the Ruby readings so far. There's at least one way, and usually multiple.
-
-But you should most definitely ask us questions about the methods and classes in the Ruby readings, and how they work.
-
-### 3_hamming.rb
+### hamming.rb
 
 Calculate the Hamming difference between two DNA strands.
 
@@ -242,67 +243,68 @@ other_dna.strand = "T"
 
 p dna.distance_between(other_dna) # => 1
 ```
-### 4_raindrops.rb
 
-Convert a number to a string, the contents of which depend on the number's factors.
 
-If the number has 3 as a factor, output 'Pling'.
-If the number has 5 as a factor, output 'Plang'.
-If the number has 7 as a factor, output 'Plong'.
-If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
+### darts
+
+Write a program that prints the earned points of a single toss of a Darts game.
+
+Darts is a game where players throw darts to a target.
+
+In our particular instance of the game, the target rewards with 4 different amounts of points,
+ depending on where the dart lands.
+
+If the dart lands:  
+outside the target: 0 points.  
+in the outer circle of the target: 1 point.  
+in the middle circle of the target: 5 points.  
+in the inner circle of the target: 10 points.  
+ 
+ The outer circle has a radius of 10 units
+   (this is equivalent to the total radius for the entire target),
+   the middle circle a radius of 5 units, and the inner circle a radius of 1 unit.
+   They are all centered to the same point (that is, the circles are concentric) defined by the coordinates (0, 0).
+
+Write a program that asks for a point in the target
+ (defined by its real Cartesian coordinates x and y),
+ prints the correct amount earned by a dart landing in that point.
+
+Your program should print: `x points`
+
+Hint: the formula to find a circle with the center point (j, k) and radius (r):
+   (x-j)^2 + (y-k)^2 = r^2
+
+
+### phrase.rb
+ 
+Most commonly, we define classes to represent things; those things have attributes; and we define instance methods to operate on those attributes and return useful values.
+
+Phrase
+Convert a phrase to its acronym.
+
+Techies love their TLA (Three Letter Acronyms)!
+
+Help generate some jargon by writing a program that converts a long name like Portable Network Graphics to its acronym (PNG).
+ 
+Your Job
+Define a class called `Phrase` with:
+
+An attribute accessor called `body` which will store a String.
+An instance method called `abbreviate` that will return a String: the uppercase first letter of each word in the phrase.
 
 Examples
-28's factors are 1, 2, 4, 7, 14, 28.
-In raindrop-speak, this would be a simple "Plong".
-30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
-In raindrop-speak, this would be a "PlingPlang".
-34 has four factors: 1, 2, 17, and 34.
-In raindrop-speak, this would be "34".
+```ruby
+a = Phrase.new
+a.body = "Portable Network Graphics"
+a.abbreviate # => "PNG"
 
-Your Job
-Write a program that asks the user for an Integer and prints a String based on the rules above.
-
-Examples
-When the input is 1
-```ruby
-"Enter an integer"
-1
-"1"
-```
-When the input is 5
-```ruby
-"Enter an integer"
-5
-"Plang"
-```
-When the input is 21
-```ruby
-"Enter an integer"
-5
-"PlingPlang"
+b = Phrase.new
+b.body = "Complementary metal-oxide semiconductor"
+b.abbreviate # => "CMOS"
 ```
 
-### 5_isogram.rb
+Try to figure out a solution using methods introduced in the Ruby readings — writing software is about inventing solutions to new problems using the tools at hand.
 
-Determine if a word or phrase is an isogram.
+Put on your inventor's cap and try to figure out how to assemble solutions to these puzzles using the methods you've met in the Ruby readings so far. There's at least one way, and usually multiple.
 
-An isogram (also known as a "nonpattern word") is a word or phrase without a repeating letter, however spaces and hyphens are allowed to appear multiple times.
-
-Examples of isograms:
-
-lumberjacks
-background
-downstream
-six-year-old
-
-The word isograms, however, is not an isogram, because the s repeats.
-
-Your Job
-Define a class called String with a class method called `isogram?` that accepts one String argument, and returns true or false.
-
-Example
-
-```ruby
-String.isogram?("eleven") # => false
-String.isogram?("subdermatoglyphic") # => true
-```
+But you should most definitely ask us questions about the methods and classes in the Ruby readings, and how they work.
