@@ -1,4 +1,4 @@
-# Suppose that your program has to deal with the object inside the variable 'some_random_input', starting on Line 24. If the object is:
+# Suppose that your program has to deal with the object inside the variable 'some_random_input'. If the object is:
 
 # a String: downcase it and print it
 # a Time: figure out the day of the week, downcased, and print
