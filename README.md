@@ -128,7 +128,7 @@ When the input is 21
 ```ruby
 "Enter an integer"
 21
-"PlingPlang"
+"PlingPlong"
 ```
 
 ### think_fast.rb
