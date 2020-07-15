@@ -127,7 +127,7 @@ When the input is 5
 When the input is 21
 ```ruby
 "Enter an integer"
-5
+21
 "PlingPlang"
 ```
 
