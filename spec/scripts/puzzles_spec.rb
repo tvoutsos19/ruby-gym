@@ -146,30 +146,47 @@ describe "character_types.rb" do
   end
 end
 
-
 describe "dice_roll.rb" do
   it "prints 'You guessed correctly' when the user enters a correct guess", points: 1 do
-    # Un-require dice_roll.rb
-    dice_roll = $".select{|r| r.include? 'dice_roll.rb'}
-    $".delete(dice_roll.first)
+    results = []
+    20.times do |n|
+      # Un-require dice_roll.rb
+      dice_roll = $".select{|r| r.include? 'dice_roll.rb'}
+      $".delete(dice_roll.first)
+      # Set up standard output as a StringIO object.
+      foo = StringIO.new
+      $stdout = foo
 
-    allow_any_instance_of(Object).to receive(:gets).and_return("4\n")
-    allow_any_instance_of(Object).to receive(:rand).and_return(4)
+      allow_any_instance_of(Object).to receive(:gets).and_return("4\n")
+      output = ( require_relative '../../dice_roll' )
+     
+      # STDOUT.puts $stdout.string
+      results.push($stdout.string.split("\n").last)
+    end
 
-    expect { require_relative '../../dice_roll' }.to output(/You guessed correctly/i).to_stdout
+    expect(results).to include(/You guessed correctly/i)
   end
 end
 
 describe "dice_roll.rb" do
   it "prints 'Shame on you' when the user enters an incorrect guess", points: 1 do
-    # Un-require dice_roll.rb
-    dice_roll = $".select{|r| r.include? 'dice_roll.rb'}
-    $".delete(dice_roll.first)
+    results = []
+    20.times do |n|
+      # Un-require dice_roll.rb
+      dice_roll = $".select{|r| r.include? 'dice_roll.rb'}
+      $".delete(dice_roll.first)
+      # Set up standard output as a StringIO object.
+      foo = StringIO.new
+      $stdout = foo
 
-    allow_any_instance_of(Object).to receive(:gets).and_return("1\n")
-    allow_any_instance_of(Kernel).to receive(:rand).and_return(5)
+      allow_any_instance_of(Object).to receive(:gets).and_return("6\n")
+      output = ( require_relative '../../dice_roll' )
+     
+      # STDOUT.puts $stdout.string
+      results.push($stdout.string.split("\n").last)
+    end
 
-    expect { require_relative '../../dice_roll' }.to output(/Shame on you\. The die landed on 5/i).to_stdout
+    expect(results).to include(/Shame on you/i)
   end
 end
 
