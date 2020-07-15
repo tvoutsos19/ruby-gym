@@ -1,15 +1,35 @@
-#Now taken what you have done in food_match_1 return an array with with the highest person/persons and their count.  Example would be [[{:name=>"Tom", :like_count=>4}, {:name=>"Mike", :like_count=>4}]]
+#Now can you take all of the code that are present and make it dynamic. 
 
-people = [{:name => "Laura", :likes => ["pizza", "cake", "tequila", "apples", "steak"]}, {:name => "Kevin", :likes => ["pizza", "chicken", "pasta", "cerial", "pop"]}, {:name => "Tom", :likes => ["beer", "icecream", "tequila", "apples", "steak"]}, {:name => "Pat", :likes => ["pizza", "cake", "coffee", "garlic", "soda"]}, {:name => "Raghu", :likes => ["pizza", "carbs", "wiskey", "grapes", "oranges"]}, {:name => "Bob", :likes => ["broccoli", "cheese", "bread", "hotdog", "chimchanga"]}, {:name => "Mike", :likes => ["cabbage", "kiwi", "tequila", "apples", "steak"]}, {:name => "Jealni", :likes => ["cookies", "freeFood", "sweets", "candy", "steak"]}]
+people = [{:name => "Laura", :likes => ["pizza", "cake", "tequila", "apples", "steak"]}, {:name => "Kevin", :likes => ["pizza", "chicken", "pasta", "cerial", "pop"]}, {:name => "Tom", :likes => ["beer", "icecream", "tequila", "apples", "steak"]}, {:name => "Pat", :likes => ["pizza", "cake", "coffee", "garlic", "soda"]}, {:name => "Raghu", :likes => ["pizza", "carbs", "wiskey", "grapes", "oranges"]}, {:name => "Bob", :likes => ["broccoli", "cheese", "bread", "hotdog", "chimchanga"]}, {:name => "Mike", :likes => ["cabbage", "kiwi", "tequila", "apples", "steak"]}, {:name => "Jelani", :likes => ["cookies", "freeFood", "sweets", "candy", "steak"]}]
 
-laura_likes =  people.at(0).fetch(:likes)
+p "Enter in the name you want to compare likes against"
+input_person = gets.chomp.gsub(/\s+/, "").capitalize 
+p input_person
 
-like_count = 0 
 
-like_tracker = []
+
+
+do_they_exist = false
+found_em = nil
+people.each do |person|
+    if input_person == person.fetch(:name)
+        found_em = person
+        p "got_em"
+        do_they_exist = true
+    end
+end
+
+if do_they_exist == false
+    p "They don't exist, try again"
+    return 
+end
+        laura_likes =  found_em.fetch(:likes)
+        like_count = 0 
+
+        like_tracker = []
 people.each do |person| 
     like_count = 0 
-      if person.fetch(:name) != "Laura" 
+      if person.fetch(:name) != found_em.fetch(:name)
         laura_likes.each do |like|
           if person.fetch(:likes).count(like) == 1
             like_count = like_count + 1
@@ -38,15 +58,29 @@ highest_person = []
 
 p highest_person
 
-# if highest_person.count == 1
-#  p  "The best match is #{highest_person.at(0).fetch(:name)}"
-# elsif highest_person.count == 0 
-#   p "Im sorry but no one likes the same things as you" 
-# else
-#   names = []
-#     highest_person.each do |person|
-#       name = person.fetch(:name)
-#       names.push(name)
-#     end
-#   p "The best matches are #{names.to_sentence}"
-# end
+if highest_person.count == 1
+ p  "The highest match is #{highest_person.at(0).fetch(:name)}"
+elsif highest_person.count == 0 
+  p "Im sorry but no one likes the same things as you" 
+else
+  names = []
+    highest_person.each do |person|
+      name = person.fetch(:name)
+      names.push(name)
+    end
+  sentence = "The highest matches are #{names.at(0)}"
+  count = names.count
+  names.each_with_index do |name, index|
+    if index == count - 1
+    sentence = sentence + " and #{name}"
+    elsif index > 0 && index < count - 1
+      sentence = sentence + ", #{name}"
+   
+    else
+    end
+    
+  end
+  p sentence
+end
+
+

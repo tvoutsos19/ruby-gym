@@ -38,15 +38,15 @@ highest_person = []
 
 p highest_person
 
-# if highest_person.count == 1
-#  p  "The best match is #{highest_person.at(0).fetch(:name)}"
-# elsif highest_person.count == 0 
-#   p "Im sorry but no one likes the same things as you" 
-# else
-#   names = []
-#     highest_person.each do |person|
-#       name = person.fetch(:name)
-#       names.push(name)
-#     end
-#   p "The best matches are #{names.to_sentence}"
-# end
+if highest_person.count == 1
+ p  "The best match is #{highest_person.at(0).fetch(:name)}"
+elsif highest_person.count == 0 
+  p "Im sorry but no one likes the same things as you" 
+else
+  names = []
+    highest_person.each do |person|
+      name = person.fetch(:name)
+      names.push(name)
+    end
+  p "The best matches are #{names.to_sentence}"
+end
