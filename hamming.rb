@@ -31,10 +31,10 @@
 
 # Example
 
-#   dna = Dna.new
-#   dna.strand = "G"
-#   other_dna = Dna.new
-#   other_dna.strand = "T"
+#   g_dna = Dna.new
+#   g_dna.strand = "G"
+#   t_dna = Dna.new
+#   t_dna.strand = "T"
 
-#   p dna.distance_between(other_dna) # => 1
+#   p g_dna.distance_between(t_dna) # => 1
 
