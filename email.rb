@@ -8,10 +8,11 @@ output = nil
 
 people.each do |person|
     if person.fetch(:name) == searching_for
-        p output = person.fetch(:email)
-        return 
+        output = person.fetch(:email)
+        break 
     else
         output = "That person isn't in our list"
     end
 end
- p output 
+
+p output 
