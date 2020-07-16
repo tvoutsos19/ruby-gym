@@ -444,8 +444,14 @@ describe "accumulate.rb" do
       @counter += 1
       response
     end
-
-    expect { require_relative '../../accumulate' }.to output(/(.?Are we there yet\?.?\n){5}/i).to_stdout
+     # Set up standard output as a StringIO object.
+    foo = StringIO.new
+    $stdout = foo
+    output = ( require_relative '../../accumulate' )
+    
+    number_of_times_question_was_asked = $stdout.string.scan(/(.?Are we there yet\?.?\n)/).length
+    expect(number_of_times_question_was_asked).to be(5),
+      "Expected program to print 'Are we there yet?' 5 times, when user enters 'no' four times and 'yes' one time, but did not find the output."
   end
 end
 
