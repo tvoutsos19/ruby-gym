@@ -3,7 +3,7 @@
 #   Counts the total number of letters in the given sentence
 #   Counts the total number of spaces in the given sentence
 #   Counts the total numbers of digits in the given sentence
-#   and prints the intormation out
+#   Prints the intormation out in the format below 
 
 # Example:
 

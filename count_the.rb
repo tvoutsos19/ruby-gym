@@ -1,6 +1,6 @@
 # Write a program that: 
-#   asks the user to enter a sentence.
-#   then finds the number of times 'the' appears in the given string
-#   and finally prints, "'the' appeared x times", where x is an Integer
+#   Asks the user to enter a sentence. Once the sentence is entered the program 
+#   will count the number of times "the" appears in said sentence
+#   and print, "'the' appeared x times", where x is an Integer
 
 p "Enter a sentence:"

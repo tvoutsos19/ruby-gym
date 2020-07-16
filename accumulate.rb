@@ -1,14 +1,18 @@
-# Add some code to this program so that it:
-#  prints the history of answers given while being pestered whether we're there yet.
+# This program will start by asking you the questions, "Are we there yet?"
+
+# Your task is to complete the code so that each answer you enter is recorded into an array, and once you have finally answered "yes", the program will print the array. 
 
 # Note: all the recorded answers should be lowercase
 
 p "Are we there yet?"
 
 answer = gets.chomp.downcase
-
+array = []
+array.push(answer)
 while answer != "yes"
   p "Are we there yet?"
   
   answer = gets.chomp.downcase
+  array.push(answer)
 end
+p array 
