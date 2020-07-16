@@ -7,12 +7,8 @@
 p "Are we there yet?"
 
 answer = gets.chomp.downcase
-array = []
-array.push(answer)
 while answer != "yes"
   p "Are we there yet?"
   
   answer = gets.chomp.downcase
-  array.push(answer)
 end
-p array 
