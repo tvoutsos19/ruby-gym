@@ -10,6 +10,17 @@ ruby main.rb
 
 To re-run this command, you can use the UP and DOWN arrow keys to look at the history of all commands you've run in a particular Terminal.
 
+### black_jack
+
+Write a program to play a variety of BlackJack.
+The program should ask the user to input two numbers separated by a space, and it should print their sum.
+
+Here's the catch: 
+ if the sum is greater than 21, return 0, unless one of the numbers is 11. 
+ In such a case, the 11 should be 'converted' to a 1 to prevent the sum from being exceeded.
+
+For example, given a 11 and 13 as input, the 11 should be 'converted' into a 1 so the total sum will be 14.
+
 ### count_the
 
 Write a program that:  
@@ -73,6 +84,22 @@ Write a program that:
 - If they didn't, you program should print `Shame on you. The die landed on x`
 
 Hint: Use the `rand` method for the dice roll.
+
+### sum_odd_integers
+
+Write a program that receives any amount of numbers from a user separated by spaces.
+The program should then print the sum of the odd numbers.  
+
+For example, if the user were to enter "9 5 4" 
+the program should only sum the "9" and the "5", because those are odd numbers, and print a sum of 14.  
+
+The excepted output would be similar to this below: 
+
+```bash
+Enter at least 2 numbers separated by spaces: 
+3 7 5 8 1 
+16
+```
 
 ### leap_year
 
@@ -187,6 +214,14 @@ Note that at the end of the dialogue, it printed an Array with:
 ```
 
 _all the recorded answers should be lowercase_
+
+### anagram.rb
+
+Anagram - a word, phrase, or name formed by rearranging the letters of another.
+ For example, cinema is an anagram of iceman. 
+
+Your job is to write a program that receives two words from the user separated by a comma.
+ Your program should print "true" if the words are anagrams of each other and "false" if they are not. 
 
 ### isogram.rb
 
@@ -310,3 +345,165 @@ b = Phrase.new
 b.body = "Complementary metal-oxide semiconductor"
 b.abbreviate # => "CMOS"
 ```
+
+## Specs
+<details>
+  <summary>Click here to see names of each test</summary>
+
+black_jack.rb prints "20" when the user enters '10 10' 
+
+black_jack.rb prints "14" when the user enters '13 11' 
+
+black_jack.rb prints "0" when the user enters '13 13' 
+
+black_jack.rb prints "12" when the user enters '11 11' 
+
+count_the.rb prints "'the' appeared 5 times" when the user enters 'the cabbage, the bagel, the apple, the drink, the bread' 
+
+count_the.rb prints 'the' appeared 3 times' when the user enters 'the, beginnning the end and the middle' 
+
+count_the.rb prints 'the' appeared 2 times' when the user enters 'the- then, the 
+
+secret_encoder.rb should print '3 n22d t4 b2 m4r2 s2cr2t', when the input is 'I need to be more secret' 
+
+secret_encoder.rb should print 'D4n't t2ll 1ny4n2 45r c4d2' when the input is 'Don't tell anyone our code' 
+
+secret_decoder.rb prints 'I need to be more secret', when the input is '3 n22d t4 b2 m4r2 s2cr2t' 
+
+secret_decoder.rb prints 'Don't tell anyone our code', when the input is 'D4n't t2ll 1ny4n2 45r c4d2' 
+
+two_fer.rb prints 'One for Alice, one for me!' if the user enters 'alice' 
+
+two_fer.rb prints 'One for Shreya, one for me!' if the user enters 'shreya' 
+
+two_fer.rb prints 'One for you, one for me!' if the user enters nothing 
+
+character_types.rb finds 8 letters, 3 spaces, and 4 digits when the user enters 'here 12 plus 25' 
+
+character_types.rb finds 4 letters, 5 spaces, and 7 digits when the user enters 'game 1 12 58 09 ' 
+
+character_types.rb finds 0 letters, 0 spaces, and 0 digits when the user enters '' 
+
+dice_roll.rb prints 'You guessed correctly' when the user enters a correct guess 
+
+dice_roll.rb prints 'Shame on you' when the user enters an incorrect guess 
+
+sum_odd_integers.rb prints "14" when the user enters '9 5 4' 
+
+sum_odd_integers.rb prints "0" when the user enters '2 4 6 8' 
+
+sum_odd_integers.rb prints "5" when the user enters '1 1 3' 
+
+leap_year.rb prints '2016 is a leap year!' if the user enters '2016' 
+
+leap_year.rb prints '1804 is a leap year!' if the user enters '1804' 
+
+leap_year.rb prints '1800 is not a leap year.' if the user enters '1800' 
+
+leap_year.rb prints '2200 is not a leap year.' if the user enters '2200' 
+
+raindrops.rb should print '52' when the input is '52' 
+
+raindrops.rb should print 'PlingPlangPlong' when the input is '105' 
+
+raindrops.rb should print 'Plang' when the input is '3125' 
+
+raindrops.rb should print 'Plong' when the input is '49' 
+
+raindrops.rb should print 'PlangPlong' when the input is '35' 
+
+raindrops.rb should print 'Plang' when the input is '25' 
+
+raindrops.rb should print 'PlingPlong' when the input is '21' 
+
+raindrops.rb should print 'PlingPlang' when the input is '15' 
+
+think_fast.rb prints '5 is odd' when when the random number is '5' 
+
+think_fast.rb prints '40 is even' when the random number is '40' 
+
+think_fast.rb prints 'you may pass' when `some_random_input` is 'true' 
+
+think_fast.rb prints 'you may not pass' when `some_random_input` is 'false' 
+
+think_fast.rb prints '[:city, :state, :zip]' when `some_random_input` is a Hash 
+
+think_fast.rb prints 'hello!' when `some_random_input` is a 'Hello! 
+
+think_fast.rb prints ':goodbye' when `some_random_input` is a ':GOODBYE 
+
+think_fast.rb prints 'monday' when `some_random_input` is a Time and the current day is a Monday 
+
+accumulate.rb prints 'Are we there yet?' 5 times when the user enters 'yes' after 4 other tries'
+
+accumulate.rb prints an Array of the words the user entered, '["no", "no", "no", "no", "yes"]' 
+
+accumulate.rb prints an Array of the words the user entered, '["no", "no", "123", "yeah", "yes"]' 
+
+anagram.rb prints "false" when the user enters 'hello,olmec' 
+
+anagram.rb prints "true" when the user enters 'elvis,lives' 
+
+anagram.rb prints "true" when the user enters 'anagram,nag a ram' 
+
+isogram.rb String.isogram?('angola') should return false 
+
+isogram.rb String.isogram?('accentor') should return false 
+
+isogram.rb String.isogram?('Emily Jung Schwartzkopf') should return true 
+
+isogram.rb String.isogram?('six-year-old') should return 'true' 
+
+isogram.rb String.isogram?('thumbscrew-jappingly') should return 'false' 
+
+isogram.rb String.isogram?('thumbscrew-japingly') should return 'true' 
+
+isogram.rb String.isogram?('alphAbet') should return false 
+
+isogram.rb String.isogram?('eleven') should return false 
+
+isogram.rb String.isogram?('isogram') should return true 
+
+isogram.rb String.isogram?('') should return true 
+
+hamming.rb the distance_between 'GGACGGATTCTG' and 'AGGACGGATTCT' should return 9 
+
+hamming.rb the distance_between 'GGACTGAAATCTG' and 'GGACTGAAATCTG' should return 0 
+
+hamming.rb the distance_between 'G' and 'T' should return 1 
+
+hamming.rb the distance_between '' and '' should return 0 
+
+darts.rb prints '1 points' when the user enters '0,10 
+
+darts.rb prints '0 points' when the user enters '-9,9 
+
+darts.rb prints '5 points' when the user enters '-5,0 
+
+darts.rb prints '5 points' when the user enters '0.8,-0.8 
+
+darts.rb prints '10 points' when the user enters '0,-1 
+
+darts.rb prints '10 points' when the user enters '0,0 
+
+phrase.rb has a class called 'Phrase' 
+
+phrase.rb Phrase class has an attribute called 'body' 
+
+phrase.rb has an instance method called, 'abbreviate', that returns the abbreviation of the Phrase's body 
+
+phrase.rb returns 'SIMUFTA' when Phrase body is 'Something - I made up from thin air' 
+
+phrase.rb returns 'ROTFLSHTMDCOALM' when Phrase body is 'Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me' 
+
+phrase.rb returns 'CMOS' when Phrase body is 'Complementary metal-oxide semiconductor' 
+
+phrase.rb returns 'GIMP' when Phrase body is 'GNU Image Manipulation Program' 
+
+phrase.rb returns 'FIFO' when Phrase body is 'First In, First Out' 
+
+phrase.rb returns 'ROR' when Phrase body is 'Ruby on Rails' 
+
+phrase.rb returns 'PNG' when Phrase body is 'Portable Network Graphics' 
+
+</details>

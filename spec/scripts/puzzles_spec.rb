@@ -1,3 +1,50 @@
+describe "black_jack.rb" do
+  it "prints \"20\" when the user enters '10 10'", points: 2 do
+    # Un-require black_jack.rb
+    black_jack = $".select{|r| r.include? 'black_jack.rb'}
+    $".delete(black_jack.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("10 10\n")
+
+    expect { require_relative '../../black_jack' }.to output(/20/i).to_stdout
+  end
+end
+
+describe "black_jack.rb" do
+  it "prints \"14\" when the user enters '13 11'", points: 2 do
+    # Un-require black_jack.rb
+    black_jack = $".select{|r| r.include? 'black_jack.rb'}
+    $".delete(black_jack.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("13 11\n")
+
+    expect { require_relative '../../black_jack' }.to output(/14/i).to_stdout
+  end
+end
+
+describe "black_jack.rb" do
+  it "prints \"0\" when the user enters '13 13'", points: 2 do
+    # Un-require black_jack.rb
+    black_jack = $".select{|r| r.include? 'black_jack.rb'}
+    $".delete(black_jack.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("13 13\n")
+
+    expect { require_relative '../../black_jack' }.to output(/0/i).to_stdout
+  end
+end
+
+describe "black_jack.rb" do
+  it "prints \"12\" when the user enters '11 11'", points: 2 do
+    # Un-require black_jack.rb
+    black_jack = $".select{|r| r.include? 'black_jack.rb'}
+    $".delete(black_jack.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("11 11\n")
+
+    expect { require_relative '../../black_jack' }.to output(/12/i).to_stdout
+  end
+end
 
 describe "count_the.rb" do
   it "prints \"'the' appeared 5 times\" when the user enters 'the cabbage, the bagel, the apple, the drink, the bread'", points: 2 do
@@ -24,12 +71,12 @@ describe "count_the.rb" do
 end
 
 describe "count_the.rb" do
-  it "prints 'the' appeared 2 times' when the user enters 'the— then, the", points: 2 do
+  it "prints 'the' appeared 2 times' when the user enters 'the- then, the", points: 2 do
     # Un-require count_the.rb
     count_the = $".select{|r| r.include? 'count_the.rb'}
     $".delete(count_the.first)
 
-    allow_any_instance_of(Object).to receive(:gets).and_return("the— then, the\n")
+    allow_any_instance_of(Object).to receive(:gets).and_return("the- then, the\n")
 
     expect { require_relative '../../count_the' }.to output(/.?the.? appeared 2 times/i).to_stdout
   end
@@ -187,6 +234,42 @@ describe "dice_roll.rb" do
     end
 
     expect(results).to include(/Shame on you/i)
+  end
+end
+
+describe "sum_odd_integers.rb" do
+  it "prints \"14\" when the user enters '9 5 4'", points: 1 do
+    # Un-require sum_odd_integers.rb
+    sum_odd_integers = $".select{|r| r.include? 'sum_odd_integers.rb'}
+    $".delete(sum_odd_integers.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("9 5 4\n")
+
+    expect { require_relative '../../sum_odd_integers' }.to output(/14/i).to_stdout
+  end
+end
+
+describe "sum_odd_integers.rb" do
+  it "prints \"0\" when the user enters '2 4 6 8'", points: 1 do
+    # Un-require sum_odd_integers.rb
+    sum_odd_integers = $".select{|r| r.include? 'sum_odd_integers.rb'}
+    $".delete(sum_odd_integers.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("2 4 6 8\n")
+
+    expect { require_relative '../../sum_odd_integers' }.to output(/0/i).to_stdout
+  end
+end
+
+describe "sum_odd_integers.rb" do
+  it "prints \"5\" when the user enters '1 1 3'", points: 1 do
+    # Un-require sum_odd_integers.rb
+    sum_odd_integers = $".select{|r| r.include? 'sum_odd_integers.rb'}
+    $".delete(sum_odd_integers.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("1 1 3\n")
+
+    expect { require_relative '../../sum_odd_integers' }.to output(/5/i).to_stdout
   end
 end
 
@@ -504,7 +587,41 @@ describe "accumulate.rb" do
   end
 end
 
+describe "anagram.rb" do
+  it "prints \"false\" when the user enters 'hello,olmec'", points: 0 do
+    # Un-require anagram.rb
+    anagram = $".select{|r| r.include? 'anagram.rb'}
+    $".delete(anagram.first)
 
+    allow_any_instance_of(Object).to receive(:gets).and_return("hello,olmec\n")
+
+    expect { require_relative '../../anagram' }.to output(/false/i).to_stdout
+  end
+end
+
+describe "anagram.rb" do
+  it "prints \"true\" when the user enters 'elvis,lives'", points: 0 do
+    # Un-require anagram.rb
+    anagram = $".select{|r| r.include? 'anagram.rb'}
+    $".delete(anagram.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("elvis,lives\n")
+
+    expect { require_relative '../../anagram' }.to output(/true/i).to_stdout
+  end
+end
+
+describe "anagram.rb" do
+  it "prints \"true\" when the user enters 'anagram,nag a ram'", points: 0 do
+    # Un-require anagram.rb
+    anagram = $".select{|r| r.include? 'anagram.rb'}
+    $".delete(anagram.first)
+
+    allow_any_instance_of(Object).to receive(:gets).and_return("anagram,nag a ram\n")
+
+    expect { require_relative '../../anagram' }.to output(/true/i).to_stdout
+  end
+end
 
 describe "isogram.rb" do
   it "String.isogram?('angola') should return false", points: 0 do
