@@ -14,3 +14,9 @@
 #  "Number of digits in the string is: 4"
 
 p "Enter a sentence:"
+
+sentence=gets.chomp
+
+p "Number of letters in the string is: " + sentence.gsub(/[^a-z]/i, "").length.to_s
+p "Number of spaces in the string is: " + (sentence.gsub(/[^a-z0-9\s]/i, "").length - sentence.gsub(/\s+/, "").length).to_s
+p "Number of digits in the string is: " + sentence.gsub(/[^0-9]/, "").length.to_s
