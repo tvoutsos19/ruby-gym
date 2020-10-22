@@ -11,3 +11,16 @@
 # 16
 
 p "Enter at least 2 numbers, separated by spaces:"
+
+numbers = gets.chomp.split
+
+new_list=Array.new
+
+numbers.each do |block|
+ question = block.to_i 
+  if question.odd?
+    new_list.push(question)
+  end
+end
+
+p new_list.sum
